@@ -3,7 +3,7 @@ Introduction on cloud Computing on AWS.
 
 1) Build a node.js project on AWS.
 
-2) Build Elastic Containers 
+2) Build Elastic Container.
 
 3) Build EC2 Example with terraform.
 
