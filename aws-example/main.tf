@@ -8,12 +8,10 @@ terraform {
 }
 
 provider "aws" {
-  region     = "us-west-1"
-  access_key = "Add-Your-Public-Key"
-  secret_key = "Add-Your-Secret-Key"
+  region = "us-west-1"
 }
 
-resource "aws_instance" "my-second-server" {
+resource "aws_instance" "my-second-server-on-aws" {
   ami           = "ami-08c40ec9ead489470"
   instance_type = "t2.micro"
   tags = {
