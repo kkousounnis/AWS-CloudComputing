@@ -184,3 +184,20 @@ resource "aws_instance" "nexusHost" {
   }
 
 }
+
+# Create/Launch an AWS EC2 Instance to host Sonarqube
+
+resource "aws_instance" "Sonarqube" {
+  ami                         = var.ami
+  instance_type               = var.instance_type_for_nexus
+  key_name                    = var.key_name
+  vpc_security_group_ids      = [aws_security_group.mylab3.id]
+  subnet_id                   = aws_subnet.mylab1.id
+  associate_public_ip_address = true
+  user_data                   = file("./InstallSonarqube.sh")
+
+  tags = {
+    "Name" = "Sonarqube-server"
+  }
+
+}
